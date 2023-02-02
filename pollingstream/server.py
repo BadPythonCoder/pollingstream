@@ -102,7 +102,7 @@ class Server:
 					conn.send(b'HTTP/1.1 200 OK\nConnection: close\nContent-type: plain/text\n\n'+str(msg).encode("utf-8"))
 					conn.close()
 					break
-		elif req.split("\n")[0].split("?")[0].startswith(f"HEAD {self.path}/ping"):
+		elif req.split("\n")[0].split("?")[0].startswith(f"GET {self.path}/ping"):
 			try:
 				queryr = req.split("\n")[0].split("?")[1].split("&")
 				query = {}

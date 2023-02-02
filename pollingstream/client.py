@@ -47,7 +47,7 @@ class Client:
 		while not self.disconnected:
 			time.sleep(self.interval/1000)
 			print(self.uri+f"/ping?id={self.sessionid}&token={self.sessiontoken}")
-			r = requests.head(self.uri+f"/ping?id={self.sessionid}&token={self.sessiontoken}")
+			r = requests.get(self.uri+f"/ping?id={self.sessionid}&token={self.sessiontoken}")
 			print(r.text)
 	def evthread(self):
 		while not self.disconnected:
